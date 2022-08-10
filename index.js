@@ -10,9 +10,12 @@ import { registerValidation, loginValidation, postCreateValidation } from './val
 import { handleValidationErrors, checkAuth } from './utils/index.js';
 
 import { UserController, PostController } from './controllers/index.js';
-
+//   mongodb+srv://admin:12345@cluster0.3g5yc5u.mongodb.net/blog?retryWrites=true&w=majority
 mongoose
   .connect(process.env.MONGODB_URI)
+//   .connect(
+//     `mongodb+srv://admin:12345@cluster0.3g5yc5u.mongodb.net/blog?retryWrites=true&w=majority`,
+//   )
   .then(() => console.log('DB ok'))
   .catch((err) => console.log('DB error', err));
 
